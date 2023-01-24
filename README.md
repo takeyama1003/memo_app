@@ -11,7 +11,7 @@
 ・サンプルのECアプリをメモアプリに変更  
 ・情報の多いLAMPで実装  
 ・DB操作はphpmyadminを使用  
-・gitの操作はSourcetreeを使用  
+・git操作はSourcetreeを使用  
 
 ---
 ### ✅デザインについて
