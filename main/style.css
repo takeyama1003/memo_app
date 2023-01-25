@@ -1,7 +1,29 @@
 @charset "UTF-8";
+
+/* メニュー */
+nav {
+    padding: 2em 0;
+}
+
+nav a {
+	padding-right: 1em;
+}
+
+/* 検索 */
+.search {
+    padding-bottom: 2em;
+}
+
+.search input[type="text"] {
+    width: 300px;
+    padding: .3em;
+    margin-right: .5em;
+}
+
 th, td {
 	padding: 5px;
 }
+
 a {
 	padding-right: 10px;
 }
