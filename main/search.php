@@ -1,8 +1,6 @@
 <div class="search">
-<?php
-	echo '<form action="product.php" method="post">';
-	echo '<input type="text" name="keyword">';
-	echo '<input type="submit" value="検索">';
-	echo '</form>';
-?>
+	<form action="product.php" method="post">
+		<input type="text" name="keyword">
+		<input type="submit" value="検索">
+	</form>
 </div>

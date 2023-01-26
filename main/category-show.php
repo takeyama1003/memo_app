@@ -7,7 +7,9 @@ if (!isset($_SESSION['customer'])) {
 <?php require '../header.php'; ?>
 <?php require 'menu.php'; ?>
 <?php
-echo '<a href="category-add.php">カテゴリー追加</a>';
-require 'category.php';
+	echo '<div class="btn">';
+	echo '<a href="category-add.php">カテゴリー追加</a>';
+	echo '</div>';
 ?>
+<?php require 'category.php'; ?>
 <?php require '../footer.php'; ?>
