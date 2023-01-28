@@ -22,10 +22,10 @@ if (isset($_SESSION['customer'])) {
 	$sql2->execute([$id]);
 
 	echo 'カテゴリーを削除しました。';
-	echo '<hr>';
+	// echo '<hr>';
 } else {
 	echo 'カテゴリーを削除するには、ログインしてください。';
 }
-require 'category.php';
+// require 'category.php';
 ?>
 <?php require '../footer.php'; ?>

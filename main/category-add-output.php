@@ -6,7 +6,7 @@ require 'db-connect.php';
 if (isset($_REQUEST['category_id'])) {
 	$sql=$pdo->prepare('update category set category_name=? where category_id=?');
 	if (empty($_REQUEST['category_name'])) {
-		echo 'タイトルを入力してください。';
+		echo 'カテゴリー名を入力してください。';
 	}
 	else if ($sql->execute(
 		[htmlspecialchars($_REQUEST['category_name']), $_REQUEST['category_id']]
@@ -20,7 +20,7 @@ if (isset($_REQUEST['category_id'])) {
 else{
 	$sql=$pdo->prepare('insert into category values(null, ?)');
 	if (empty($_REQUEST['name'])) {
-		echo 'タイトルを入力してください。b';
+		echo 'カテゴリー名を入力してください。';
 	}
 	else if ($sql->execute(
 		[htmlspecialchars($_REQUEST['name'])]

@@ -43,7 +43,6 @@ table {
 th {
     border: none;
 	padding: 5px;
-    /* background: #8cac7b; */
 }
 
 td {
@@ -56,12 +55,15 @@ td {
 } */
 
 /* カテゴリー */
+
 .category tr:first-child {
-    background: #8cac7b;
+    /* background: #8cac7b; */
+    /* border: solid 1px #555; */
+    background: #eee;
 }
 
 .category tr td:nth-child(2) a{
-padding-right: 1em;
+    padding-right: 1em;
 }
 
 .category-add p {
