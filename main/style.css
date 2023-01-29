@@ -83,7 +83,7 @@ td {
     width: 7%;
 }
 
-.memo-all td {
+.memo-all th, .memo-all td {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -201,7 +201,7 @@ td {
     width: 7%;
 }
 
-.favorite td {
+.favorite th, .favorite td {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
