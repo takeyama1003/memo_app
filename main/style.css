@@ -47,18 +47,66 @@ th {
 
 td {
     border: none;
-	padding: 1em 0 0;
+	/* padding: 1em 0 0; */
+    padding: 1em 1em 0 0;
 }
 
-/* a {
-	padding-right: 10px;
-} */
+/* メモ */
+
+.memo-all table {
+	table-layout:fixed;
+}
+
+
+.memo-all tr:first-child {
+    background: #eee;
+}
+
+.memo-all tr th:first-child {
+    width: 33%;
+}
+
+.memo-all tr th:nth-child(2) {
+    width: 40%;
+}
+
+.memo-all tr th:nth-child(3) {
+    width: 20%;
+}
+
+.memo-all tr th:last-child {
+    width: 7%;
+
+}
+
+.memo-all td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+.memo-all tr td:first-child {
+    width: 33%;
+}
+
+.memo-all tr td:nth-child(2) {
+    width: 40%;
+}
+
+.memo-all tr td:nth-child(3) {
+    width: 20%;
+}
+
+.memo-all tr td:last-child {
+    width: 7%;
+    text-align: right;
+}
+
 
 /* カテゴリー */
 
 .category tr:first-child {
     /* background: #8cac7b; */
-    /* border: solid 1px #555; */
     background: #eee;
 }
 
