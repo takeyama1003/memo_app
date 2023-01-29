@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+input, select{
+    font-size: 16px;
+    line-height: 1.6;
+}
+
 /* メニュー */
 nav {
     text-align: center;
@@ -51,7 +56,7 @@ td {
     padding: 1em 1em 0 0;
 }
 
-/* メモ */
+/* メモ一覧 */
 
 .memo-all table {
 	table-layout:fixed;
@@ -102,6 +107,57 @@ td {
     text-align: right;
 }
 
+/* メモ追加、編集 */
+
+.add-memo dt{
+    padding-bottom: 0.3em;
+}
+
+.add-memo dd{
+    padding-bottom: 1em;
+}
+
+.add-memo dd:nth-last-child(2){
+    padding-bottom: 0.5em;
+}
+
+.add-memo select {
+    width: 100%;
+    padding: 9px 2px;
+}
+
+.add-memo input[type="text"] {
+    width: calc(100% - 12px);
+    padding: 0.3em;
+}
+
+.add-memo textarea {
+    width: calc(100% - 10px);
+    padding: 0.3em;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.memo-btn{
+    text-align: right;
+}
+
+.bm-btn {
+    display: inline-block;
+    margin-right: 1em;
+    border: solid 1px #555;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 3px 2px;
+    background-color: #eee;
+    color: #000;
+    vertical-align: top;
+}
+
+.bm-btn:hover {
+    filter: brightness(0.95);
+    cursor: default;
+}
 
 /* カテゴリー */
 

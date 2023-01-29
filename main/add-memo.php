@@ -6,8 +6,10 @@ if (!isset($_SESSION['customer'])) {
 ?>
 <?php require '../header.php'; ?>
 <?php require 'menu.php'; ?>
+<?php require 'db-connect.php'; ?>
+<section class="add-memo">
 <?php
-require 'db-connect.php';
+//メモ編集
 if (isset($_REQUEST['id'])) {
 	// $sql=$pdo->prepare('select * from product where id=?');
 	$sql=$pdo->prepare('select * from product LEFT JOIN category ON product.category_id = category.category_id where product.id=?');
@@ -15,8 +17,10 @@ if (isset($_REQUEST['id'])) {
 	$sql2=$pdo->query('select * from category');
 	foreach ($sql as $row) {
 		echo '<form action="add-memo-output.php" method="post">';
-		echo '<p>ID：', $row['id'], '</p>';
-		echo '<p>カテゴリー：';
+		// echo '<p>ID：', $row['id'], '</p>';
+		echo '<dl>';
+		echo '<dt>カテゴリー</dt>';
+		echo '<dd>';
 		echo '<select name="category_id">';
 		//echo '<option value=""></option>';
 			foreach ($sql2 as $row2) {
@@ -27,22 +31,34 @@ if (isset($_REQUEST['id'])) {
 				}
 			}
 		echo '</select>';
-		echo '</p>';
-		// echo '<p>カテゴリー：','<input type="text" name="category_id" value="', $row['category_name'],'">', '</p>';
+		echo '</dd>';
 
-		echo '<p>タイトル：','<input type="text" name="name" value="', $row['name'],'">', '</p>';
-		echo '<p>本文：','<textarea name="price" value="" rows="5" cols="33">', $row['price'], '</textarea></p>';
-		echo '<input type="hidden" name="id" value="', $row['id'], '">';
+		echo '<dt>タイトル</dt>';
+		echo '<dd>','<input type="text" name="name" value="', $row['name'],'">', '</dd>';
+
+		echo '<dt>本文</dt>';
+		echo '<dd>','<textarea name="price" value="" rows="10" cols="33">', $row['price'], '</textarea></dd>';
+
+		echo '<dd class="memo-btn">';
+		echo '<a class="bm-btn" href="favorite-insert.php?id=', $row['id'], '">ブックマーク</a>';
 		echo '<input type="submit" value="保存">';
+		echo '</dd>';
+
+		echo '</dl>';
+
+		echo '<input type="hidden" name="id" value="', $row['id'], '">';
 		echo '<input type="hidden" name="customer_id" value="'.$_SESSION['customer']['id'].'">';
+		
 		echo '</form>';
-		echo '<p><a href="favorite-insert.php?id=', $row['id'], '">ブックマーク</a></p>';
 	}
 }
+//新規メモ追加
 else{
 	echo '<form action="add-memo-output.php" method="post">';
-	echo '<table>';
-	echo '<tr><td>カテゴリー</td><td>';
+
+	echo '<dl>';
+	echo '<dt>カテゴリー</dt>';
+	echo '<dd>';
 	$sql2=$pdo->query('select * from category');
 	echo '<select name="category_id">';
 	echo '<option value=""></option>';
@@ -50,18 +66,23 @@ else{
 			echo '<option value="',$row2['category_id'],'">', $row2['category_name'], '</option>';
 		}
 	echo '</select>';
-	// echo '<input type="text" name="category_id" value="">';
-	echo '</td></tr>';
-	echo '<tr><td>タイトル</td><td>';
-	echo '<input type="text" name="name" value="">';
-	echo '</td></tr>';
-	echo '<tr><td>本文</td><td>';
-	echo '<textarea name="price" value="" rows="5" cols="33"></textarea>';
-	echo '</td></tr>';
-	echo '</table>';
+	echo '</dd>';
+
+	echo '<dt>タイトル</dt>';
+	echo '<dd>','<input type="text" name="name" value="">', '</dd>';
+
+	echo '<dt>本文</dt>';
+	echo '<dd>','<textarea name="price" value="" rows="10" cols="33"></textarea>', '</dd>';
+
+	echo '<dd class="memo-btn">';
 	echo '<input type="submit" value="保存">';
+	echo '</dd>';
+
+	echo '</dl>';
 	echo '<input type="hidden" name="customer_id" value="'.$_SESSION['customer']['id'].'">';
+
 	echo '</form>';
 }
 ?>
+</section>
 <?php require '../footer.php'; ?>
