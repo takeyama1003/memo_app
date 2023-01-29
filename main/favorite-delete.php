@@ -12,11 +12,11 @@ if (isset($_SESSION['customer'])) {
 	$sql=$pdo->prepare(
 		'delete from favorite where customer_id=? and product_id=?');
 	$sql->execute([$_SESSION['customer']['id'], $_REQUEST['id']]);
-	echo 'ブックマークからメモを削除しました。';
-	echo '<hr>';
+	echo 'ブックマークから1件のメモを削除しました。';
+	// echo '<hr>';
 } else {
 	echo 'ブックマークからメモを削除するには、ログインしてください。';
 }
-require 'favorite.php';
 ?>
+<?php require 'favorite.php'; ?>
 <?php require '../footer.php'; ?>

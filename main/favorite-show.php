@@ -6,7 +6,5 @@ if (!isset($_SESSION['customer'])) {
 ?>
 <?php require '../header.php'; ?>
 <?php require 'menu.php'; ?>
-<?php
-require 'favorite.php';
-?>
+<?php require 'favorite.php'; ?>
 <?php require '../footer.php'; ?>

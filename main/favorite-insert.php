@@ -11,8 +11,8 @@ if (!isset($_SESSION['customer'])) {
 	require 'db-connect.php';
 	$sql=$pdo->prepare('insert into favorite values(?,?)');
 	$sql->execute([$_SESSION['customer']['id'], $_REQUEST['id']]);
-	echo 'お気に入りに商品を追加しました。';
-	echo '<hr>';
+	echo 'ブックマークに追加しました。';
+	// echo '<hr>';
 	require 'favorite.php';
 // } else {
 // 	echo 'お気に入りに商品を追加するには、ログインしてください。';

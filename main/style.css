@@ -81,7 +81,6 @@ td {
 
 .memo-all tr th:last-child {
     width: 7%;
-
 }
 
 .memo-all td {
@@ -178,4 +177,45 @@ td {
     width: calc(100% - 75px);
     padding: 0.3em;
     margin-right: 0.5em;
+}
+
+/* ブックマーク */
+
+.favorite table {
+	table-layout:fixed;
+}
+
+.favorite tr:first-child {
+    background: #eee;
+}
+
+.favorite tr th:first-child {
+    width: 33%;
+}
+
+.favorite tr th:nth-child(2) {
+    width: 60%;
+}
+
+.favorite tr th:last-child {
+    width: 7%;
+}
+
+.favorite td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+.favorite tr td:first-child {
+    width: 33%;
+}
+
+.favorite tr td:nth-child(2) {
+    width: 60%;
+}
+
+.favorite tr td:last-child {
+    width: 7%;
+    text-align: right;
 }
