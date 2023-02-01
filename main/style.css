@@ -5,6 +5,62 @@ input, select{
     line-height: 1.6;
 }
 
+/* ログイン */
+
+.loginErrMessage{
+    height: calc(100vh - 176px);
+    position: relative;
+}
+
+.loginErrMessage p{
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+.login-input {
+    height: calc(100vh - 176px);
+    position: relative;
+}
+
+.login-input dl {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    padding: 30px 60px 20px;
+    background: #eee;
+}
+
+.login-input dt {
+    padding-bottom: 0.3em;
+}
+
+.login-input dd {
+    padding-bottom: 1em;
+}
+
+.login-input dd:last-child {
+    text-align: right;
+}
+
+.login-input input[type="text"]  {
+    width: calc(100% - 12px);
+    padding: 0.3em;
+}
+
+.login-input input[type="password"]  {
+    width: calc(100% - 12px);
+    padding: 0.3em;
+}
+
 /* メニュー */
 nav {
     text-align: center;
@@ -31,11 +87,6 @@ nav a:last-child {
     width: 300px;
     padding: .3em;
     margin-right: .5em;
-}
-
-/* ボタン */
-.btn {
-    margin-bottom: 0.5em;
 }
 
 /* コンテンツ */
@@ -159,6 +210,10 @@ td {
 }
 
 /* カテゴリー */
+
+.btn {
+    margin-bottom: 0.5em;
+}
 
 .category tr:first-child {
     /* background: #8cac7b; */

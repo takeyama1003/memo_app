@@ -16,8 +16,13 @@ if (isset($_SESSION['customer'])) {
 	require 'search.php';
 	//echo 'こんにちは、', $_SESSION['customer']['name'], 'さん。';
 	require 'category.php';
-} else {
+} 
+else {
+	echo '<section class="loginErrMessage">';
+	echo '<p>';
 	echo 'ログイン名またはパスワードが違います。';
+	echo '</p>';
+	echo '</section>';
 }
 ?>
 <?php require '../footer.php'; ?>

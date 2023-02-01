@@ -2,16 +2,16 @@
 <?php unset($_SESSION['customer']); ?>
 <?php require '../header.php'; ?>
 <?php require 'menu.php'; ?>
-<?php
-// if (isset($_SESSION['customer'])) {
-// 	require 'menu.php'; 
-// } 
-?>
-<!-- <form action="login-output.php" method="post"> -->
-<form action="index.php" method="post">
-ログイン名<input type="text" name="login"><br>
-パスワード<input type="password" name="password"><br>
-<input type="submit" value="ログイン">
-</form>
-<!-- <a href="customer-input.php">新規会員登録</a> -->
+<section class="login-input">
+    <form action="index.php" method="post">
+        <dl>
+            <dt>ログイン名</dt>
+            <dd><input type="text" name="login"></dd>
+            <dt>パスワード</dt>
+            <dd><input type="password" name="password"></dd>
+            <dd><input type="submit" value="ログイン"></dd>
+        </dl>
+    </form>
+</section>
+
 <?php require '../footer.php'; ?>
