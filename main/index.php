@@ -20,7 +20,7 @@ if (isset($_SESSION['customer'])) {
 else {
 	echo '<section class="loginErrMessage">';
 	echo '<p>';
-	echo 'ログイン名またはパスワードが違います。';
+	echo 'ログインIDまたはパスワードが違います。';
 	echo '</p>';
 	echo '</section>';
 }

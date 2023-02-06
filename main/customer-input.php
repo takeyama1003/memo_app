@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php require '../header.php'; ?>
 <?php require 'menu.php'; ?>
+<section class="customer-input">
 <?php
 $name=$login=$password='';
 if (isset($_SESSION['customer'])) {
@@ -8,26 +9,30 @@ if (isset($_SESSION['customer'])) {
 	//$address=$_SESSION['customer']['address'];
 	$login=$_SESSION['customer']['login'];
 	$password=$_SESSION['customer']['password'];
-	// require 'menu.php';
 }else{
 	echo '<p>新規でアカウントを作成します。</p>';
+	$returnText = '戻る＞';
 }
+
 echo '<form action="customer-output.php" method="post">';
-echo '<table>';
-echo '<tr><td>お名前</td><td>';
-echo '<input type="text" name="name" value="', $name, '">';
-echo '</td></tr>';
-// echo '<tr><td>ご住所</td><td>';
-// echo '<input type="text" name="address" value="', $address, '">';
-// echo '</td></tr>';
-echo '<tr><td>ログイン名</td><td>';
-echo '<input type="text" name="login" value="', $login, '">';
-echo '</td></tr>';
-echo '<tr><td>パスワード</td><td>';
-echo '<input type="password" name="password" value="', $password, '">';
-echo '</td></tr>';
-echo '</table>';
-echo '<input type="submit" value="確定">';
+echo '<dl>';
+
+echo '<dt>お名前</dt>';
+echo '<dd><input type="text" name="name" value="', $name,'"></dd>';
+
+echo '<dt>ID</dt>';
+echo '<dd><input type="text" name="login" value="', $login,'"></dd>';
+
+echo '<dt>パスワード</dt>';
+echo '<dd><input type="password" name="password" value="', $password, '"></dd>';
+
+echo '<dd>';
+echo '<a href="login-input.php">', $returnText,'</a>';
+echo '<input type="submit" value="確定"></dd>';
+echo '</dd>';
+
+echo '</dl>';
 echo '</form>';
 ?>
+</section>
 <?php require '../footer.php'; ?>

@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php require '../header.php'; ?>
 <?php require 'menu.php'; ?>
+<section style="text-align: center;">
 <?php
 require 'db-connect.php';
 if (isset($_SESSION['customer'])) {
@@ -26,10 +27,12 @@ if (empty($sql->fetchAll())) {
 		$sql=$pdo->prepare('insert into customer values(null,?,?,?)');
 		$sql->execute([
 			$_REQUEST['name'],$_REQUEST['login'], $_REQUEST['password']]);
-		echo 'アカウント情報を登録しました。';
+		echo 'アカウント情報を登録しました。<br><br>';
+		echo '<a href="login-input.php">ログイン＞</a>';
 	}
 } else {
-	echo 'ログイン名がすでに使用されていますので、変更してください。';
+	echo 'ログインIDがすでに使用されていますので、変更してください。';
 }
 ?>
+</section>
 <?php require '../footer.php'; ?>

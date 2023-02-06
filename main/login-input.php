@@ -5,7 +5,7 @@
 <section class="login-input">
     <form action="index.php" method="post">
         <dl>
-            <dt>ログイン名</dt>
+            <dt>ID</dt>
             <dd><input type="text" name="login"></dd>
             <dt>パスワード</dt>
             <dd><input type="password" name="password"></dd>

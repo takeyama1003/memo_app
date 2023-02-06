@@ -64,6 +64,43 @@ input, select{
     padding: 0.3em;
 }
 
+/* アカウント */
+
+.customer-input{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.customer-input p {
+    margin-bottom: 1.5em;
+}
+
+.customer-input dt {
+    padding-bottom: 0.3em;
+}
+
+
+.customer-input dd {
+    padding-bottom: 1em;
+}
+
+.customer-input input[type="text"]  {
+    width: calc(100% - 12px);
+    padding: 0.3em;
+}
+
+.customer-input input[type="password"]  {
+    width: calc(100% - 12px);
+    padding: 0.3em;
+}
+
+.customer-input dd:last-child{
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
 /* メニュー */
 nav {
     text-align: center;
