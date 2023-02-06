@@ -9,9 +9,9 @@ if (isset($_SESSION['customer'])) {
     echo '<a href="customer-input.php">アカウント</a>';
     echo '<a href="javascript:void(0)" id="logout-btn" onclick="logoutBtnClick()">ログアウト</a>';
 }
-else {
-    echo '<a href="customer-input.php">新規アカウント作成</a>';
-	echo '<a href="login-input.php">ログイン</a>';
-} 
+// else {
+//     echo '<a href="customer-input.php">新規アカウント作成</a>';
+// 	echo '<a href="login-input.php">ログイン</a>';
+// } 
 ?>
 </nav>

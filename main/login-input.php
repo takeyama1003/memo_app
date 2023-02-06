@@ -9,7 +9,7 @@
             <dd><input type="text" name="login"></dd>
             <dt>パスワード</dt>
             <dd><input type="password" name="password"></dd>
-            <dd><input type="submit" value="ログイン"></dd>
+            <dd><a href="customer-input.php">アカウント作成</a><input type="submit" value="ログイン"></dd>
         </dl>
     </form>
 </section>
