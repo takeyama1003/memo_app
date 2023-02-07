@@ -18,12 +18,12 @@ if (isset($_REQUEST['category_id'])) {
 	}
 }
 else{
-	$sql=$pdo->prepare('insert into category values(null, ?)');
+	$sql=$pdo->prepare('insert into category values(null, ?, ?)');
 	if (empty($_REQUEST['name'])) {
 		echo 'カテゴリー名を入力してください。';
 	}
 	else if ($sql->execute(
-		[htmlspecialchars($_REQUEST['name'])]
+		[htmlspecialchars($_REQUEST['name']), $_REQUEST['customer_id']]
 	)) {
 		echo '追加しました。';
 	} 

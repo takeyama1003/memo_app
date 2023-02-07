@@ -35,6 +35,7 @@ else{
 	echo '<input type="text" name="name" value="">';
 	echo '<input type="submit" value="保存">';
 	echo '</p>';
+	echo '<input type="hidden" name="customer_id" value="'.$_SESSION['customer']['id'].'">';
 	
 	echo '</form>';
 }

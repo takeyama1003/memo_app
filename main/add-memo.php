@@ -14,7 +14,9 @@ if (isset($_REQUEST['id'])) {
 	// $sql=$pdo->prepare('select * from product where id=?');
 	$sql=$pdo->prepare('select * from product LEFT JOIN category ON product.category_id = category.category_id where product.id=?');
 	$sql->execute([$_REQUEST['id']]);
+	
 	$sql2=$pdo->query('select * from category');
+
 	foreach ($sql as $row) {
 		echo '<form action="add-memo-output.php" method="post">';
 		// echo '<p>ID：', $row['id'], '</p>';
