@@ -9,13 +9,16 @@ if (!isset($_SESSION['customer'])) {
 <?php require 'db-connect.php'; ?>
 <section class="add-memo">
 <?php
+//$customer_idは配列
+$customer_id=[$_SESSION['customer']['id']];
+
 //メモ編集
 if (isset($_REQUEST['id'])) {
 	// $sql=$pdo->prepare('select * from product where id=?');
 	$sql=$pdo->prepare('select * from product LEFT JOIN category ON product.category_id = category.category_id where product.id=?');
 	$sql->execute([$_REQUEST['id']]);
 	
-	$sql2=$pdo->query('select * from category');
+	$sql2=$pdo->query("select * from category where category.customer_id='" .$customer_id[0]."'");
 
 	foreach ($sql as $row) {
 		echo '<form action="add-memo-output.php" method="post">';
@@ -61,7 +64,7 @@ else{
 	echo '<dl>';
 	echo '<dt>カテゴリー</dt>';
 	echo '<dd>';
-	$sql2=$pdo->query('select * from category');
+	$sql2=$pdo->query("select * from category where category.customer_id='" .$customer_id[0]."'");
 	echo '<select name="category_id">';
 	echo '<option value=""></option>';
 		foreach ($sql2 as $row2) {
