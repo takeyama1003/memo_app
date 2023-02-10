@@ -5,8 +5,6 @@
 	$customer_id=[$_SESSION['customer']['id']];
 	//echo $customer_id[0];
 
-	// $sql=$pdo->query('select * from category where category_id not in (10)');
-
 	$sql=$pdo->query("select * from category where category.customer_id='" .$customer_id[0]."'"." AND category_id not in (10)");//カスタマーID && 未分類
 
 	//ファイル名取得(パス)
@@ -21,7 +19,6 @@
 	foreach ($sql as $row) {
 		$id=$row['category_id'];
 		echo '<tr>';
-		// echo '<td>', $id, '</td>';
 		echo '<td>';
 		echo '<a href="product.php?category_name=', $row['category_name'], '">', $row['category_name'], '</a>';
 		echo '</td>';

@@ -16,11 +16,6 @@ if (isset($_SESSION['customer'])) {
 		'delete from product where id=?');
 	$sql2->execute([$id]);
 
-	//未分類に設定
-	// $sql2=$pdo->prepare(
-	// 	"UPDATE product SET category_id = 10 WHERE category_id = $id ");
-	// $sql2->execute([$id]);
-
 	echo 'メモを削除しました。';
 	echo '<hr>';
 } else {

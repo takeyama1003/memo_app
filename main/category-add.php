@@ -16,8 +16,6 @@ if (isset($_REQUEST['id'])) {
 		echo '<form action="category-add-output.php" method="post">';
 
 		echo '<p>カテゴリー名</p>';
-		//echo '<p>ID：', $row['category_id'], '</p>';
-
 		echo '<p>';
 		echo '<input type="text" name="category_name" value="', $row['category_name'],'">';
 		echo '<input type="submit" value="保存">';

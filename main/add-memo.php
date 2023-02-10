@@ -14,7 +14,6 @@ $customer_id=[$_SESSION['customer']['id']];
 
 //メモ編集
 if (isset($_REQUEST['id'])) {
-	// $sql=$pdo->prepare('select * from product where id=?');
 	$sql=$pdo->prepare('select * from product LEFT JOIN category ON product.category_id = category.category_id where product.id=?');
 	$sql->execute([$_REQUEST['id']]);
 	
@@ -22,12 +21,10 @@ if (isset($_REQUEST['id'])) {
 
 	foreach ($sql as $row) {
 		echo '<form action="add-memo-output.php" method="post">';
-		// echo '<p>ID：', $row['id'], '</p>';
 		echo '<dl>';
 		echo '<dt>カテゴリー</dt>';
 		echo '<dd>';
 		echo '<select name="category_id">';
-		//echo '<option value=""></option>';
 			foreach ($sql2 as $row2) {
 				if($row2['category_id'] == $row['category_id']){
 					echo '<option value="',$row2['category_id'],'" selected>', $row2['category_name'], '</option>';

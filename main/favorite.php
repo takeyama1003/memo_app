@@ -1,6 +1,5 @@
 <section class="favorite">
 <?php
-// if (isset($_SESSION['customer'])) {
 	echo '<table>';
 	echo '<tr><th>タイトル</th>';
 	echo '<th>本文</th><th></th></tr>';
@@ -12,7 +11,6 @@
 	foreach ($sql as $row) {
 		$id=$row['id'];
 		echo '<tr>';
-		// echo '<td>', $id, '</td>';
 		echo '<td><a href="add-memo.php?id='.$id.'">', $row['name'], 
 		'</a></td>';
 		echo '<td>', $row['price'], '</td>';
@@ -21,8 +19,5 @@
 		echo '</tr>';
 	}
 	echo '</table>';
-// } else {
-// 	echo 'お気に入りを表示するには、ログインしてください。';
-// }
 ?>
 </section>

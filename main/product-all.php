@@ -26,16 +26,13 @@ else {
 foreach ($sql as $row) {
 	$id=$row['id'];
 	echo '<tr>';
-	// echo '<td>', $id, '</td>';
 	echo '<td>';
 	echo '<a href="add-memo.php?id=', $id, '">', $row['name'], '</a>';
-	// echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
 	echo '</td>';
 	echo '<td>', $row['price'], '</td>';
 	echo '<td>';
 	echo '<a href="product.php?category_name=', $row['category_name'], '">', $row['category_name'], '</a>';
 	echo '</td>';
-	// echo '<td>', $row['category_name'], '</td>';
 	echo '<td>';
 	echo '<a href="product-delete.php?id=', $id, '">削除</a>';
 	echo '</td>';

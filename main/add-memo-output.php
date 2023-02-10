@@ -21,7 +21,6 @@ if (isset($_REQUEST['id'])) {
 	} 
 	else {
 		echo '更新に失敗しました。';
-		// echo '<p>', $_REQUEST['name'], $_REQUEST['price'], $_REQUEST['id'], '</p>';
 	}
 }
 else{
