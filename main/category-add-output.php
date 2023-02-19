@@ -3,7 +3,7 @@
 <?php require 'menu.php'; ?>
 <?php
 require 'db-connect.php';
-if (isset($_REQUEST['category_id'])) {
+if (isset($_REQUEST['category_id'])) {//編集
 	$sql=$pdo->prepare('update category set category_name=? where category_id=?');
 	if (empty($_REQUEST['category_name'])) {
 		echo 'カテゴリー名を入力してください。';
@@ -17,7 +17,7 @@ if (isset($_REQUEST['category_id'])) {
 		echo '更新に失敗しました。';
 	}
 }
-else{
+else{//新規
 	$sql=$pdo->prepare('insert into category values(null, ?, ?)');
 	if (empty($_REQUEST['name'])) {
 		echo 'カテゴリー名を入力してください。';

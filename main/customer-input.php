@@ -29,6 +29,9 @@ echo '<dd><input type="password" name="password" value="', $password, '"></dd>';
 echo '<dd>';
 echo '<a href="login-input.php">', $returnText,'</a>';
 echo '<input type="submit" value="確定"></dd>';
+
+// echo '<input type="hidden" name="uncategorized" value="未分類">';
+
 echo '</dd>';
 
 echo '</dl>';

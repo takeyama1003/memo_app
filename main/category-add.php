@@ -9,7 +9,7 @@ if (!isset($_SESSION['customer'])) {
 <?php require 'db-connect.php'; ?>
 <section class="category-add">
 <?php
-if (isset($_REQUEST['id'])) {
+if (isset($_REQUEST['id'])) {//編集
 	$sql=$pdo->prepare('select * from category where category_id=?');
 	$sql->execute([$_REQUEST['id']]);
 	foreach ($sql as $row) {
@@ -25,7 +25,7 @@ if (isset($_REQUEST['id'])) {
 		echo '</form>';
 	}
 }
-else{
+else{//新規
 	echo '<form action="category-add-output.php" method="post">';
 
 	echo '<p>カテゴリー名</p>';
