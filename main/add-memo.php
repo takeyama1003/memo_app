@@ -75,7 +75,7 @@ else{
 	}
 	else{
 		echo '<select name="category_id">';
-		echo '<option value=""></option>';
+		echo '<option value="">選択してください</option>';
 		foreach ($sql2 as $row2) {
 			echo '<option value="',$row2['category_id'],'">', $row2['category_name'], '</option>';
 		}
