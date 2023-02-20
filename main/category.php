@@ -5,7 +5,7 @@
 	$customer_id=[$_SESSION['customer']['id']];
 	//echo $customer_id[0];
 
-	$sql=$pdo->query("select * from category where category.customer_id='" .$customer_id[0]."'"." AND category_id not in (10)");//カスタマーID && 未分類以外
+	$sql=$pdo->query("select * from category where category.customer_id='" .$customer_id[0]."'"." AND category_name != '未分類'");//カスタマーID && 未分類以外
 
 	//ファイル名取得(パス)
 	$dir = basename($_SERVER['SCRIPT_NAME']);
