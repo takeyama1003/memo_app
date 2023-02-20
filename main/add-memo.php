@@ -63,24 +63,28 @@ else{
 	echo '<dd>';
 	$sql2=$pdo->query("select * from category where category.customer_id='" .$customer_id[0]."'");
 
-	$sql3=$pdo->query("select * from category where category.customer_id='" .$customer_id[0]."'");
+	// $sql3=$pdo->query("select * from category where category.customer_id='" .$customer_id[0]."'");
 
-	foreach ($sql3 as $row3) {
-		$categoryId = $row3['category_id'];
-	}
+	// foreach ($sql3 as $row3) {
+	// 	$categoryId = $row3['category_id'];
+	// }
 
-	if(!$categoryId){
-		echo '<select name="category_id" disabled>';
-		echo '<option value="">選択できるカテゴリーがありません</option>';
+	// if(!$categoryId){
+	// 	echo '<select name="category_id" disabled>';
+	// 	echo '<option value="">選択できるカテゴリーがありません</option>';
+	// }
+	// else{
+	// 	echo '<select name="category_id">';
+	// 	echo '<option value="">選択してください</option>';
+	// 	foreach ($sql2 as $row2) {
+	// 		echo '<option value="',$row2['category_id'],'">', $row2['category_name'], '</option>';
+	// 	}
+	// }
+
+	echo '<select name="category_id">';
+	foreach ($sql2 as $row2) {
+		echo '<option value="',$row2['category_id'],'">', $row2['category_name'], '</option>';
 	}
-	else{
-		echo '<select name="category_id">';
-		echo '<option value="">選択してください</option>';
-		foreach ($sql2 as $row2) {
-			echo '<option value="',$row2['category_id'],'">', $row2['category_name'], '</option>';
-		}
-	}
-		
 	echo '</select>';
 	echo '</dd>';
 
